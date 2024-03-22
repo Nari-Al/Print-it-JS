@@ -18,6 +18,7 @@ const slides = [
 ]
 
 let carousel = document.querySelector(".banner-img");
+let carouselTitle = document.querySelector("p")
 let i = 0;
 
 // Left Arrow
@@ -31,6 +32,7 @@ function goLeft() {
 		i = slides.length-1
 	}
 	carousel.setAttribute("src", "assets/images/slideshow/" + slides[i].image)
+	carouselTitle.innerHTML = slides[i].tagLine
 	let dotSelected = document.querySelector(".dot_selected")
 	if (dotSelected.previousElementSibling == null) {
 		dotContainer.lastElementChild.classList.add("dot_selected")
@@ -53,6 +55,7 @@ function goRight() {
 		i = 0
 	}
 	carousel.setAttribute("src", "assets/images/slideshow/" + slides[i].image)
+	carouselTitle.innerHTML = slides[i].tagLine
 	let dotSelected = document.querySelector(".dot_selected")
 	if (dotSelected.nextElementSibling == null) {
 		dotContainer.firstElementChild.classList.add("dot_selected")
@@ -64,9 +67,6 @@ function goRight() {
 	}
 	
 }
-
-
-// i >= 0 && i <= 3
 
 // Dots
 
